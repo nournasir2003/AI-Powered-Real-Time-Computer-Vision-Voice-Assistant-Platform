@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blind Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="background">
+      <!-- Background Glow -->
+      <div class="bg-blob blob1"></div>
+      <div class="bg-blob blob2"></div>
+
+      <!-- Main Card -->
+      <div class="card">
+        <!-- Floating Bubbles -->
+
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+        <div class="bubble bubble4"></div>
+
+        <!-- Sparkles -->
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✦</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✦</span>
+
+        <!-- Eye -->
+        <div class="eye-wrapper">
+          <div class="eye">
+            <div class="iris"></div>
+          </div>
+        </div>
+
+        <!-- Title -->
+        <h1>Blind<br />Assistant</h1>
+
+        <p class="subtitle">Real-time object detection & voice alerts</p>
+
+        <!-- Slider -->
+        <div class="slider-indicator">
+          <span></span>
+          <span class="active"></span>
+        </div>
+
+        <!-- Language Selection -->
+        <div class="question">✦ Choose your audio language ✦</div>
+
+        <div class="language-container">
+          <!-- English -->
+          <div class="lang-card active" onclick="selectLang('en', this)">
+            <div class="badge">GB</div>
+
+            <h2>English</h2>
+
+            <p>English voice</p>
+
+            <div class="wave"></div>
+          </div>
+
+          <!-- Arabic -->
+          <div class="lang-card" onclick="selectLang('ar', this)">
+            <div class="badge purple">SA</div>
+
+            <h2>العربية</h2>
+
+            <p>صوت عربي</p>
+
+            <div class="wave purple-wave"></div>
+          </div>
+        </div>
+
+        <!-- Start Button -->
+        <button id="mainBtn" class="start-btn" onclick="toggleAssistant()">
+          <span class="play-icon">▶</span>
+          Start Assistant
+        </button>
+
+        <!-- Status -->
+        <div id="status" class="status"></div>
+
+        <!-- Features -->
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">⌕</div>
+
+            <h3>Smart Detection</h3>
+
+            <p>Real-time recognition</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🔊</div>
+
+            <h3>Voice Alerts</h3>
+
+            <p>Instant audio feedback</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+  </body>
+</html>
